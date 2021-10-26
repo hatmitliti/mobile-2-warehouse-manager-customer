@@ -1,4 +1,4 @@
-package com.example.warehousemanagercustomer;
+package com.example.use;
 
 import org.junit.Test;
 
