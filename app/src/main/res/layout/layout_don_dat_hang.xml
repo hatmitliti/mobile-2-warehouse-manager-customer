@@ -1,75 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tb"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        app:title="Đơn đặt hàng"
-        app:titleTextColor="@color/white"
         android:background="@color/black"
-        />
+        app:title="Đơn đặt hàng"
+        app:titleTextColor="@color/white" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="10dp"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Địa chỉ"
-            android:textColor="@color/black"
-            android:textSize="30dp"
+            android:text="ĐỊA CHỈ"
             android:textAlignment="center"
-            />
-        <EditText
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
-            android:layout_width="300dp"
+        <EditText
+            android:id="@+id/txtsdt"
+            android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="5dp"
             android:background="@drawable/border"
-            android:padding="10dp"
-            android:hint="Phường"
-            android:minHeight="48dp" />
-        <EditText
+            android:hint="Số điện thoại"
+            android:minHeight="48dp"
+            android:padding="10dp" />
 
-            android:layout_width="300dp"
+        <EditText
+            android:id="@+id/txtquan"
+            android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="5dp"
             android:background="@drawable/border"
-            android:padding="10dp"
             android:hint="Quận"
-            android:minHeight="48dp" />
-        <EditText
+            android:minHeight="48dp"
+            android:padding="10dp" />
 
-            android:layout_width="300dp"
+        <EditText
+            android:id="@+id/txtphuong"
+            android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="5dp"
             android:background="@drawable/border"
-            android:padding="10dp"
-            android:hint="Tỉnh/TP"
-            android:minHeight="48dp" />
+            android:hint="Phường"
+            android:minHeight="48dp"
+            android:padding="10dp" />
+
+        <EditText
+            android:id="@+id/sonhatenduong"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:background="@drawable/border"
+            android:hint="Số nhà tên đường"
+            android:minHeight="48dp"
+            android:padding="10dp" />
+
         <ListView
             android:id="@+id/lv"
             android:layout_width="match_parent"
-            android:layout_height="300dp"/>
+            android:layout_height="300dp" />
+
         <TextView
+            android:id="@+id/txtTongTien"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:textSize="30dp"
+            android:text="Tổng tiền"
             android:textAlignment="center"
-            android:text="Tổng tiền"/>
+            android:textColor="#FF0000"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
         <Button
+            android:id="@+id/btnDatHangXacNhan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Đặt hàng"/>
+            android:text="Đặt hàng" />
     </LinearLayout>
 </LinearLayout>

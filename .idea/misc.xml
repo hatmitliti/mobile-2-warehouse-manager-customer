@@ -3,25 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/3.BaiTap/User/app/src/main/res/drawable-v24/ic_baseline_arrow_back_24.xml" value="0.22552083333333334" />
-        <entry key="..\:/3.BaiTap/User/app/src/main/res/drawable/border.xml" value="0.22552083333333334" />
-        <entry key="..\:/3.BaiTap/User/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.21481481481481482" />
-        <entry key="..\:/3.BaiTap/User/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.21481481481481482" />
-        <entry key="..\:/3.BaiTap/User/app/src/main/res/drawable/ic_baseline_shopping_cart_24.xml" value="0.21481481481481482" />
-        <entry key="..\:/3.BaiTap/User/app/src/main/res/drawable/ic_launcher_background.xml" value="0.21481481481481482" />
-        <entry key="..\:/3.BaiTap/User/app/src/main/res/layout/activity_home.xml" value="0.209375" />
-        <entry key="..\:/3.BaiTap/User/app/src/main/res/layout/activity_main.xml" value="0.209375" />
-        <entry key="..\:/3.BaiTap/User/app/src/main/res/layout/item_cart.xml" value="0.209375" />
-        <entry key="..\:/3.BaiTap/User/app/src/main/res/layout/item_don_dat_hang.xml" value="0.209375" />
-        <entry key="..\:/3.BaiTap/User/app/src/main/res/layout/item_home.xml" value="0.209375" />
-        <entry key="..\:/3.BaiTap/User/app/src/main/res/layout/item_xem_don_hang.xml" value="0.25" />
-        <entry key="..\:/3.BaiTap/User/app/src/main/res/layout/layout_cart.xml" value="0.14" />
-        <entry key="..\:/3.BaiTap/User/app/src/main/res/layout/layout_detailproduct.xml" value="0.2" />
-        <entry key="..\:/3.BaiTap/User/app/src/main/res/layout/layout_don_dat_hang.xml" value="0.45" />
-        <entry key="..\:/3.BaiTap/User/app/src/main/res/layout/layout_home.xml" value="0.2" />
-        <entry key="..\:/3.BaiTap/User/app/src/main/res/layout/layout_profile.xml" value="0.2" />
-        <entry key="..\:/3.BaiTap/User/app/src/main/res/layout/layout_xem_don_hang.xml" value="0.209375" />
-        <entry key="..\:/3.BaiTap/User/app/src/main/res/menu/menu_bottom.xml" value="0.209375" />
+        <entry key="..\:/Users/truon/Desktop/Warehousemanager/app/src/main/res/drawable-v24/bg_circle_solid_blue.xml" value="0.28615384615384615" />
+        <entry key="..\:/Users/truon/Desktop/Warehousemanager/app/src/main/res/drawable-v24/bg_corner_btn.xml" value="0.25833333333333336" />
+        <entry key="..\:/Users/truon/Desktop/Warehousemanager/app/src/main/res/layout/activity_main.xml" value="0.25729166666666664" />
+        <entry key="..\:/Users/truon/Desktop/Warehousemanager/app/src/main/res/layout/item_cart.xml" value="0.266304347826087" />
+        <entry key="..\:/Users/truon/Desktop/Warehousemanager/app/src/main/res/layout/item_don_dat_hang.xml" value="0.26268115942028986" />
+        <entry key="..\:/Users/truon/Desktop/Warehousemanager/app/src/main/res/layout/item_xem_don_hang.xml" value="0.26268115942028986" />
+        <entry key="..\:/Users/truon/Desktop/Warehousemanager/app/src/main/res/layout/layout_cart.xml" value="0.26268115942028986" />
+        <entry key="..\:/Users/truon/Desktop/Warehousemanager/app/src/main/res/layout/layout_detailproduct.xml" value="0.1334853090172239" />
+        <entry key="..\:/Users/truon/Desktop/Warehousemanager/app/src/main/res/layout/layout_don_dat_hang.xml" value="0.26268115942028986" />
+        <entry key="..\:/Users/truon/Desktop/Warehousemanager/app/src/main/res/layout/layout_profile.xml" value="0.26268115942028986" />
+        <entry key="..\:/Users/truon/Desktop/Warehousemanager/app/src/main/res/layout/layout_xem_don_hang.xml" value="0.26268115942028986" />
+        <entry key="..\:/Users/truon/Desktop/Warehousemanager/app/src/main/res/layout/login.xml" value="0.266304347826087" />
       </map>
     </option>
   </component>

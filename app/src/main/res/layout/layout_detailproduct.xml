@@ -1,52 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tb"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        app:title="Chi tiết sản phẩm"
-        app:titleTextColor="@color/white"
         android:background="@color/black"
-        />
+        app:title="Chi tiết sản phẩm"
+        app:titleTextColor="@color/white" />
+
     <ImageView
+        android:id="@+id/imageDetail"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:src="@drawable/tiger"
-        />
+        android:src="@drawable/tiger" />
+
     <TextView
-        android:layout_margin="10dp"
+        android:id="@+id/txtNameProduct"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:text="Tên sản phẩm"
         android:textColor="@color/black"
-        android:textStyle="bold"
-        android:textSize="20dp"/>
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
     <TextView
+        android:id="@+id/txtPrice"
         android:layout_width="match_parent"
-        android:layout_margin="10dp"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:text="100000 VNĐ"
         android:textColor="@color/black"
-        android:textStyle="bold"
-        android:textSize="20dp"/>
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="bottom">
+
         <ImageButton
             android:id="@+id/imgHinh"
             android:layout_width="205dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_shopping_cart_24"
             android:backgroundTint="@color/purple_500"
-            />
+            android:src="@drawable/ic_baseline_shopping_cart_24" />
+
         <Button
             android:layout_width="205dp"
             android:layout_height="55dp"
-            android:text="Thêm vào giỏ hàng"/>
+            android:text="Thêm vào giỏ hàng" />
     </LinearLayout>
 </LinearLayout>

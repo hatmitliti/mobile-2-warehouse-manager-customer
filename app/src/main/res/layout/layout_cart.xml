@@ -1,26 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".screen.Home">
+
     <ListView
         android:id="@+id/lv"
         android:layout_width="match_parent"
-        android:layout_height="525dp"/>
+        android:layout_height="600dp" />
+
     <TextView
+        android:background="#83FF61"
+        android:textStyle="bold"
+        android:id="@+id/txtTongTienCart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Tổng tiền"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="20dp"
-        />
+        android:textSize="20dp" />
+
     <Button
         android:id="@+id/btnDatHang"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Đặt hàng"/>
+        android:text="Đặt hàng" />
 </LinearLayout>
