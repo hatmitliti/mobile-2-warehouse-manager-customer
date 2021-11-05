@@ -33,7 +33,15 @@
             android:textColor="@color/black"
             android:textSize="20dp"
             android:textStyle="bold" />
-
+        <TextView
+            android:id="@+id/txtGiaTienInCart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:text="10 000 VNĐ"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -42,49 +50,44 @@
 
             <Button
                 android:id="@+id/btnGiamProductInCart"
-                android:layout_width="50dp"
+                android:layout_width="45dp"
                 android:layout_height="wrap_content"
                 android:text="-"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/white"/>
 
             <TextView
                 android:id="@+id/txtSoLuongProductInCart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:text="x4"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="4"
                 android:textColor="@color/black"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
             <Button
                 android:id="@+id/btnTangProductInCart"
-                android:layout_width="50dp"
+                android:layout_width="45dp"
                 android:layout_height="wrap_content"
                 android:text="+"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/white"/>
 
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/txtGiaTienInCart"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="5dp"
-            android:text="10 000"
-            android:textColor="@color/black"
-            android:textSize="20dp"
-            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btnXoaProductInCart"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Xóa"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:backgroundTint="@color/red"/>
     </LinearLayout>
 
 </LinearLayout>
