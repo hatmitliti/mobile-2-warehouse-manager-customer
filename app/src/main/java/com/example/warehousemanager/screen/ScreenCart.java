@@ -103,7 +103,7 @@ public class ScreenCart extends Fragment {
             }
         });
 
-
+        // sự kiện cho button đặt hàng
         btnDatHang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -121,7 +121,7 @@ public class ScreenCart extends Fragment {
 
         return view;
     }
-
+    // tính tổng tiền trong giỏ
     public void setTotal(ArrayList<ProductCart> list) {
         for (int j = 0; j < list.size(); j++) {
             tong += (list.get(j).getPrice() * list.get(j).getQuality());
