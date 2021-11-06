@@ -36,6 +36,7 @@ public class Home extends Fragment {
         adapter = new CustomAdapterProduct(getActivity(), R.layout.item_home, list);
         gv.setAdapter(adapter);
 
+        //  lay du lieu
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("products");
         mDatabase.addChildEventListener(new ChildEventListener() {
             @Override
