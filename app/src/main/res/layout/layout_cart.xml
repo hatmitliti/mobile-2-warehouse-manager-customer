@@ -10,7 +10,7 @@
     <ListView
         android:id="@+id/lv"
         android:layout_width="match_parent"
-        android:layout_height="600dp" />
+        android:layout_height="580dp" />
 
     <TextView
         android:background="#83FF61"
