@@ -105,10 +105,10 @@ public class ScreenCart extends Fragment {
             @Override
             public void onClick(View view) {
 
-                if (Integer.parseInt(txtTongTienCart.getText().toString()) == 0) {
+                if (Integer.parseInt(txtTongTienCart.getTag().toString()) == 0) {
                     Toast.makeText(getContext(), "Chưa có sản phẩm", Toast.LENGTH_SHORT).show();
                 } else {
-                    int tongTien = Integer.parseInt(txtTongTienCart.getText().toString());
+                    int tongTien = Integer.parseInt(txtTongTienCart.getTag().toString());
                     Intent intent = new Intent(getActivity(), ScreenOrder.class);
                     intent.putExtra("list", list);
                     startActivity(intent);
@@ -125,6 +125,7 @@ public class ScreenCart extends Fragment {
         for (int j = 0; j < list.size(); j++) {
             tongTien += (list.get(j).getPrice() * list.get(j).getQuality());
         }
-        txtTongTienCart.setText(NumberFormat.getInstance().format(tongTien));
+        txtTongTienCart.setText(NumberFormat.getInstance().format(tongTien) + "VNĐ");
+        txtTongTienCart.setTag(tongTien);
     }
 }
