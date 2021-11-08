@@ -22,6 +22,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+
 public class DetailProduct extends AppCompatActivity {
     Toolbar toolbar;
     ImageView imgHinh;
@@ -33,9 +36,18 @@ public class DetailProduct extends AppCompatActivity {
         setControl();
         setEvent();
 
+
+        //
+        NumberFormat currentLocale = NumberFormat.getInstance();
+        Locale localeEN = new Locale("en", "EN");
+        NumberFormat en = NumberFormat.getInstance(localeEN);
+        //
+
         ImageView imageDetail = findViewById(R.id.imageDetail);
         TextView txtNameProduct = findViewById(R.id.txtNameProduct);
         TextView txtPrice = findViewById(R.id.txtPrice);
+        TextView txtCategory = findViewById(R.id.txtCategory);
+        TextView txtManufacturer = findViewById(R.id.txtManufacturer);
 
 
         Intent intent = getIntent();
@@ -43,11 +55,15 @@ public class DetailProduct extends AppCompatActivity {
         String name_product = intent.getStringExtra("name_product");
         String price_product = intent.getStringExtra("price_product");
         String image_product = intent.getStringExtra("image_product");
+        String category_product = intent.getStringExtra("category_product");
+        String manufacturer_product = intent.getStringExtra("manufacturer_product");
 
 
         Picasso.get().load(image_product).into(imageDetail);
-        txtNameProduct.setText(name_product);
-        txtPrice.setText(price_product);
+        txtNameProduct.setText( "Tên Sản Phẩm: "+name_product);
+        txtPrice.setText("Giá Sản Phẩm: "+en.format(Integer.parseInt(price_product))+" VNĐ");
+        txtCategory.setText("Loại Đồ Uống: "+ category_product);
+        txtManufacturer.setText("Hãng Sản Xuất: : "+ manufacturer_product);
 
 
         // thêm giỏ hàng:

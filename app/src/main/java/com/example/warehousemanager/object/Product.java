@@ -10,11 +10,12 @@ public class Product {
    private  int stock;
    private String tenHinhAnh;
    private  String tenSanPham;
+   private String manufacturer;
 
     public Product() {
     }
 
-    public Product(String category, String description, int giaTien, String hinhAnh, String id, int sold, int stock, String tenHinhAnh, String tenSanPham) {
+    public Product(String category, String description, int giaTien, String hinhAnh, String id, int sold, int stock, String tenHinhAnh, String tenSanPham ,String manufacturer) {
         this.category = category;
         this.description = description;
         this.giaTien = giaTien;
@@ -24,6 +25,15 @@ public class Product {
         this.stock = stock;
         this.tenHinhAnh = tenHinhAnh;
         this.tenSanPham = tenSanPham;
+        this.manufacturer = manufacturer;
+    }
+
+    public String getManufacturer() {
+        return manufacturer;
+    }
+
+    public void setManufacturer(String manufacturer) {
+        this.manufacturer = manufacturer;
     }
 
     public String getCategory() {

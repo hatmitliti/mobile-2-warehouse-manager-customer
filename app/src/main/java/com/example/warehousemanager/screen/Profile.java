@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -20,12 +21,14 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.squareup.picasso.Picasso;
 
 public class Profile extends Fragment {
     Button btnXemDonHang;
     TextView txtSDTUser;
     TextView txtHang;
     TextView txtTenUser;
+    ImageView imgUser;
 
     @Nullable
     @Override
@@ -43,6 +46,8 @@ public class Profile extends Fragment {
         txtHang = view.findViewById(R.id.txtHang);
         txtSDTUser = view.findViewById(R.id.txtSDTUser);
         txtTenUser = view.findViewById(R.id.txtTenUser);
+        imgUser = view.findViewById(R.id.IMGAnhUser);
+
 
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("user");
         mDatabase.addChildEventListener(new ChildEventListener() {
@@ -53,6 +58,7 @@ public class Profile extends Fragment {
                     txtHang.setText(user.getRank());
                     txtSDTUser.setText(user.getPhone());
                     txtTenUser.setText(user.getName());
+                    Picasso.get().load(user.getImgUser()).into(imgUser);
                 }
             }
 
