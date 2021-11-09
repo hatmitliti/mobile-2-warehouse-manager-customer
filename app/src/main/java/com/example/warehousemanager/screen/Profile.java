@@ -25,6 +25,7 @@ import com.squareup.picasso.Picasso;
 
 public class Profile extends Fragment {
     Button btnXemDonHang;
+    Button btnThongTinUser;
     TextView txtSDTUser;
     TextView txtHang;
     TextView txtTenUser;
@@ -47,6 +48,7 @@ public class Profile extends Fragment {
         txtSDTUser = view.findViewById(R.id.txtSDTUser);
         txtTenUser = view.findViewById(R.id.txtTenUser);
         imgUser = view.findViewById(R.id.IMGAnhUser);
+        btnThongTinUser = view.findViewById(R.id.btnThongTinUser);
 
 
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("user");
@@ -80,6 +82,14 @@ public class Profile extends Fragment {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
+
+
+        btnThongTinUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), user.class));
             }
         });
 
