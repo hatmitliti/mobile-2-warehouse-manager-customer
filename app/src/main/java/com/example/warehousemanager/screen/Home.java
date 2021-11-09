@@ -76,6 +76,9 @@ public class Home extends Fragment {
                 intent.putExtra("name_product", list.get(i).getTenSanPham());
                 intent.putExtra("price_product", list.get(i).getGiaTien() + "");
                 intent.putExtra("image_product", list.get(i).getHinhAnh());
+                intent.putExtra("category_product", list.get(i).getCategory());
+                intent.putExtra("manufacturer_product", list.get(i).getManufacturer());
+
 
                 startActivity(intent);
             }

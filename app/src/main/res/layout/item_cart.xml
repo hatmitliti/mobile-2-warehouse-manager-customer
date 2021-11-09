@@ -9,9 +9,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="6">
-
-
-
         <ImageView
             android:id="@+id/imgHinhAnhProductInCart"
             android:layout_width="wrap_content"
@@ -66,6 +63,12 @@
                 android:text="+"
                 android:textSize="20dp"
                 android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:text="(Thùng)"/>
 
         </LinearLayout>
 

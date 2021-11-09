@@ -52,7 +52,7 @@ public class ScreenOrder extends AppCompatActivity {
         for (int j = 0; j < list.size(); j++) {
             tong += (list.get(j).getPrice() * list.get(j).getQuality());
         }
-        txtTongTien.setText(NumberFormat.getInstance().format(tong));
+        txtTongTien.setText(NumberFormat.getInstance().format(tong) + "VNĐ");
 
         adapter = new CustomAdapterOrder(this, R.layout.item_don_dat_hang, list);
         lv.setAdapter(adapter);

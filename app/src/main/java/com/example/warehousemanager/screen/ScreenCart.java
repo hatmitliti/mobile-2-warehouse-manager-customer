@@ -37,7 +37,7 @@ public class ScreenCart extends Fragment {
     TextView txtTongTienCart;
     CustomAdapterCart adapter;
     ArrayList<ProductCart> list = new ArrayList<>();
-    int tong = 0;
+    ArrayList<String> mkey = new ArrayList<>();
 
 
     @Override
@@ -65,31 +65,28 @@ public class ScreenCart extends Fragment {
                 ProductCart productCart = snapshot.getValue(ProductCart.class);
                 list.add(productCart);
                 adapter.notifyDataSetChanged();
+                mkey.add(snapshot.getKey());
+                txtTongTienCart.setText("");
                 setTotal(list);
             }
 
             @Override
             public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                for (int j = 0; j < list.size(); j++) {
-                    if (list.get(j).getId().equals(snapshot.getKey())) {
-                        ProductCart productCart = snapshot.getValue(ProductCart.class);
-                        list.set(j, productCart);
-                        adapter.notifyDataSetChanged();
-                    }
-                }
+                int index = mkey.indexOf(snapshot.getKey());
+                ProductCart productCart = snapshot.getValue(ProductCart.class);
+                list.set(index, productCart);
+                adapter.notifyDataSetChanged();
+                txtTongTienCart.setText("");
                 setTotal(list);
             }
 
             @Override
             public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-                for (int j = 0; j < list.size(); j++) {
-                    if (list.get(j).getId().equals(snapshot.getKey())) {
-                        list.remove(j);
-                        setTotal(list);
-                        adapter.notifyDataSetChanged();
-                    }
-                }
+                list.remove(snapshot.getValue(ProductCart.class));
+                adapter.notifyDataSetChanged();
+                txtTongTienCart.setText("");
                 setTotal(list);
+                mkey.remove(snapshot.getKey());
             }
 
             @Override
@@ -103,15 +100,15 @@ public class ScreenCart extends Fragment {
             }
         });
 
-
+        // sự kiện cho button đặt hàng
         btnDatHang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                if (tong == 0) {
+                if (Integer.parseInt(txtTongTienCart.getTag().toString()) == 0) {
                     Toast.makeText(getContext(), "Chưa có sản phẩm", Toast.LENGTH_SHORT).show();
                 } else {
-                    int tongTien = tong;
+                    int tongTien = Integer.parseInt(txtTongTienCart.getTag().toString());
                     Intent intent = new Intent(getActivity(), ScreenOrder.class);
                     intent.putExtra("list", list);
                     startActivity(intent);
@@ -122,10 +119,13 @@ public class ScreenCart extends Fragment {
         return view;
     }
 
+    // tính tổng tiền trong giỏ
     public void setTotal(ArrayList<ProductCart> list) {
+        int tongTien = 0;
         for (int j = 0; j < list.size(); j++) {
-            tong += (list.get(j).getPrice() * list.get(j).getQuality());
+            tongTien += (list.get(j).getPrice() * list.get(j).getQuality());
         }
-        txtTongTienCart.setText(NumberFormat.getInstance().format(tong));
+        txtTongTienCart.setText(NumberFormat.getInstance().format(tongTien) + "VNĐ");
+        txtTongTienCart.setTag(tongTien);
     }
 }

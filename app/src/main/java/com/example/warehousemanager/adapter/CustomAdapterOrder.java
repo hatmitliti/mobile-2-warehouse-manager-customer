@@ -17,7 +17,9 @@ import com.example.warehousemanager.object.Product;
 import com.example.warehousemanager.object.ProductCart;
 import com.squareup.picasso.Picasso;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class CustomAdapterOrder extends ArrayAdapter {
     Context context;
@@ -39,6 +41,11 @@ public class CustomAdapterOrder extends ArrayAdapter {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+        //
+        NumberFormat currentLocale = NumberFormat.getInstance();
+        Locale localeEN = new Locale("en", "EN");
+        NumberFormat en = NumberFormat.getInstance(localeEN);
+        //
         ViewHolder viewHolder;
 
         if (convertView == null) {
@@ -56,7 +63,7 @@ public class CustomAdapterOrder extends ArrayAdapter {
             viewHolder = (ViewHolder) convertView.getTag();
         }
         ProductCart pc = data.get(position);
-        viewHolder.giaTien.setText(pc.getPrice() + "VNĐ");
+        viewHolder.giaTien.setText(en.format(pc.getPrice()) + "VNĐ");
         viewHolder.ten.setText(pc.getName() + "");
         viewHolder.txtSoLuong.setText("* " + pc.getQuality() + "");
         Picasso.get().load(pc.getImage()).into(viewHolder.imgHinhAnh);
