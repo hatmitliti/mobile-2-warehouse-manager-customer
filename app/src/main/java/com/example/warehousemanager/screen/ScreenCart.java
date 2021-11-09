@@ -46,7 +46,6 @@ public class ScreenCart extends Fragment {
         setTotal(list);
     }
 
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -103,7 +102,7 @@ public class ScreenCart extends Fragment {
             }
         });
 
-
+        //
         btnDatHang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
