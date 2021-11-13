@@ -45,8 +45,6 @@ public class ScreenOrder extends AppCompatActivity {
         // lấy dữ liệu truyền qua
         Intent intent = getIntent();
         list = (ArrayList<ProductCart>) intent.getSerializableExtra("list");
-        //  String tongTien =(intent.getStringExtra("tongTien"));
-        //  txtTongTien.setText(tongTien+"");
 
         int tong = 0;
         for (int j = 0; j < list.size(); j++) {
@@ -93,7 +91,6 @@ public class ScreenOrder extends AppCompatActivity {
                     for (int j = 0; j < list.size(); j++) {
                         tong += (list.get(j).getPrice() * list.get(j).getQuality());
                     }
-
 
                     Bill bill = new Bill(address, id, id_user, name_user, 0, tong, sdt);
                     mDatabase.child(bill.getId()).setValue(bill);

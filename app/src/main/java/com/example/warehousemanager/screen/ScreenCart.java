@@ -56,7 +56,7 @@ public class ScreenCart extends Fragment {
         adapter = new CustomAdapterCart(getActivity(), R.layout.item_cart, list);
         lv.setAdapter(adapter);
 
-
+//
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("carts");
         mDatabase.child(MainActivity.UsernameApp).addChildEventListener(new ChildEventListener() {
             @Override
@@ -66,7 +66,6 @@ public class ScreenCart extends Fragment {
                 adapter.notifyDataSetChanged();
                 setTotal(list);
             }
-
             @Override
             public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 for (int j = 0; j < list.size(); j++) {
@@ -90,6 +89,13 @@ public class ScreenCart extends Fragment {
                 }
                 setTotal(list);
             }
+
+
+
+
+
+
+
 
             @Override
             public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
