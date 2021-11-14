@@ -9,6 +9,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -19,6 +20,10 @@ import com.example.warehousemanager.adapter.CustomAdapterOrder;
 import com.example.warehousemanager.object.Bill;
 import com.example.warehousemanager.object.Product;
 import com.example.warehousemanager.object.ProductCart;
+import com.example.warehousemanager.object.User;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -40,23 +45,18 @@ public class ScreenOrder extends AppCompatActivity {
         setContentView(R.layout.layout_don_dat_hang);
         setControl();
         setEvent();
-
-
         // lấy dữ liệu truyền qua
         Intent intent = getIntent();
         list = (ArrayList<ProductCart>) intent.getSerializableExtra("list");
-        //  String tongTien =(intent.getStringExtra("tongTien"));
-        //  txtTongTien.setText(tongTien+"");
 
         int tong = 0;
         for (int j = 0; j < list.size(); j++) {
             tong += (list.get(j).getPrice() * list.get(j).getQuality());
         }
-        txtTongTien.setText(NumberFormat.getInstance().format(tong) + "VNĐ");
+        txtTongTien.setText(NumberFormat.getInstance().format(tong) + " VNĐ");
 
         adapter = new CustomAdapterOrder(this, R.layout.item_don_dat_hang, list);
         lv.setAdapter(adapter);
-
 
         EditText sonhatenduong = findViewById(R.id.sonhatenduong);
         EditText txtphuong = findViewById(R.id.txtphuong);
@@ -114,6 +114,39 @@ public class ScreenOrder extends AppCompatActivity {
         });
 
 
+        // lấy thông tin user hiển thị sẵn lên:
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("user");
+        mDatabase.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                User user = snapshot.getValue(User.class);
+                if (user.getId().equals(MainActivity.UsernameApp)){
+                    txtsdt.setText(user.getPhone());
+                }
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
     }
 
     private void setEvent() {
@@ -131,7 +164,6 @@ public class ScreenOrder extends AppCompatActivity {
 
     private void setControl() {
         lv = findViewById(R.id.lv);
-        //  toolbar = findViewById(R.id.tb);
         btnDatHangXacNhan = findViewById(R.id.btnDatHangXacNhan);
         txtTongTien = findViewById(R.id.txtTongTien);
     }

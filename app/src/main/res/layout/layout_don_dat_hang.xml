@@ -8,12 +8,12 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tbChangePassword"
         android:layout_width="match_parent"
-        app:title="Đặt hàng"
         android:layout_height="?attr/actionBarSize"
         android:background="#FF5722"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Đặt hàng" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -79,6 +79,7 @@
             android:layout_height="300dp" />
 
         <TextView
+            android:layout_marginBottom="10dp"
             android:id="@+id/txtTongTien"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -88,10 +89,18 @@
             android:textSize="25dp"
             android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/btnDatHangXacNhan"
+        <LinearLayout
+            android:paddingTop="10dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Đặt hàng" />
+            android:layout_height="match_parent">
+
+            <Button
+                android:textSize="20dp"
+                android:id="@+id/btnDatHangXacNhan"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Đặt hàng" />
+        </LinearLayout>
+
     </LinearLayout>
 </LinearLayout>

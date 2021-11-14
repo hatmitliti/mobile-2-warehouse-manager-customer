@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="10dp"
+    android:background="#8BC34A"
+    android:gravity="center"
     android:orientation="vertical"
     tools:context=".screen.Home">
 
@@ -42,6 +43,7 @@
             android:textSize="20dp" />
 
         <TextView
+            android:textStyle="bold"
             android:id="@+id/txtHang"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
@@ -73,6 +75,7 @@
     </LinearLayout>
 
     <TextView
+        android:textSize="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -87,26 +90,27 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="10.000.000"
-        android:textColor="@color/black"
+        android:textColor="#FF5722"
         android:textSize="20dp"
         android:textStyle="bold" />
 
     <Button
+        android:layout_marginTop="50dp"
         android:id="@+id/btnXemDonHang"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
         android:text="Xem đơn hàng" />
 
     <Button
         android:id="@+id/btnThongTinUser"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
         android:text="THÔNG TIN NGƯỜI DÙNG" />
 
     <Button
         android:id="@+id/btnChangePass"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
         android:text="THAY ĐỔI MẬT KHẨU" />
 
     <LinearLayout
