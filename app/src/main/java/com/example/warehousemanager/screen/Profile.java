@@ -30,6 +30,8 @@ import com.example.warehousemanager.object.User;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -48,11 +50,13 @@ import java.util.Calendar;
 public class Profile extends Fragment {
     Button btnXemDonHang;
     Button btnThongTinUser;
+    Button btnChangePass;
+    Button btnLogout;
     TextView txtSDTUser;
     TextView txtHang;
     TextView txtTenUser;
     ImageView imgUser;
-    ArrayList<String> mKey;
+   // ArrayList<String> mKey;
 
 
     @Nullable
@@ -73,6 +77,8 @@ public class Profile extends Fragment {
         txtTenUser = view.findViewById(R.id.txtTenUser);
         imgUser = view.findViewById(R.id.IMGAnhUser);
         btnThongTinUser = view.findViewById(R.id.btnThongTinUser);
+        btnChangePass = view.findViewById(R.id.btnChangePass);
+        btnLogout = view.findViewById(R.id.btnLogout);
         TextView txtTotalMoneyUser = view.findViewById(R.id.txtTotalMoneyUser);
 
 
@@ -125,7 +131,18 @@ public class Profile extends Fragment {
                 startActivity(new Intent(getActivity(), user.class));
             }
         });
+        btnChangePass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), ChangePassword.class));
+            }
+        });
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+            }
+        });
         return view;
     }
 

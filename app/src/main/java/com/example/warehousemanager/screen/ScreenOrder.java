@@ -28,7 +28,7 @@ import java.util.UUID;
 
 public class ScreenOrder extends AppCompatActivity {
     ListView lv;
-    Toolbar toolbar;
+    // Toolbar toolbar;
     ArrayList<ProductCart> list = new ArrayList<>();
     CustomAdapterOrder adapter;
     Button btnDatHangXacNhan;
@@ -117,6 +117,7 @@ public class ScreenOrder extends AppCompatActivity {
     }
 
     private void setEvent() {
+        Toolbar toolbar = findViewById(R.id.tbChangePassword);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_24);
@@ -130,7 +131,7 @@ public class ScreenOrder extends AppCompatActivity {
 
     private void setControl() {
         lv = findViewById(R.id.lv);
-        toolbar = findViewById(R.id.tb);
+        //  toolbar = findViewById(R.id.tb);
         btnDatHangXacNhan = findViewById(R.id.btnDatHangXacNhan);
         txtTongTien = findViewById(R.id.txtTongTien);
     }

@@ -24,7 +24,7 @@ import java.util.ArrayList;
 
 public class ScreenXemDonHang extends AppCompatActivity {
     ListView lv;
-    Toolbar toolbar;
+   // Toolbar toolbar;
     ArrayList<Bill> list = new ArrayList<>();
     CustomAdapterXemDonHang adapter;
     @Override
@@ -36,6 +36,7 @@ public class ScreenXemDonHang extends AppCompatActivity {
     }
 
     private void setEvent() {
+        Toolbar toolbar = findViewById(R.id.tbChangePassword);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_24);
@@ -45,6 +46,8 @@ public class ScreenXemDonHang extends AppCompatActivity {
                 onBackPressed();
             }
         });
+
+
         adapter = new CustomAdapterXemDonHang(this, R.layout.item_xem_don_hang, list);
         lv.setAdapter(adapter);
 
@@ -91,6 +94,6 @@ public class ScreenXemDonHang extends AppCompatActivity {
 
     private void setControl() {
         lv = findViewById(R.id.lv);
-        toolbar = findViewById(R.id.tb);
+      //  toolbar = findViewById(R.id.tb);
     }
 }

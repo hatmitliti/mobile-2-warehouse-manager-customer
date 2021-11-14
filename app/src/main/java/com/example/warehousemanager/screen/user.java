@@ -3,6 +3,7 @@ package com.example.warehousemanager.screen;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -76,7 +77,6 @@ public class user extends AppCompatActivity {
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 if (snapshot.getKey().equals(MainActivity.UsernameApp)) {
                     user = snapshot.getValue(User.class);
-                    Toast.makeText(getApplicationContext(), user.getName(), Toast.LENGTH_SHORT).show();
                     try {
                         Picasso.get().load(user.getImgUser()).into(profile_image);
                     } catch (Exception e) {
@@ -191,8 +191,7 @@ public class user extends AppCompatActivity {
 
                     public void onClick(DialogInterface dialog, int which) {
                         if (rdbcamera.isChecked()) {
-                            if(!imgCamera.getTag().equals(R.drawable.ic_baseline_camera_alt_24))
-                            {
+                            if (!imgCamera.getTag().equals(R.drawable.ic_baseline_camera_alt_24)) {
                                 Calendar calendar = Calendar.getInstance();
                                 String imageName = "image" + calendar.getTimeInMillis() + ".png";
                                 // Create a reference to "mountains.jpg"
@@ -242,14 +241,12 @@ public class user extends AppCompatActivity {
                                         }
                                     }
                                 });
-                            }else
-                            {
+                            } else {
                                 Toast.makeText(context, "Bạn Chưa Chọn Ảnh", Toast.LENGTH_SHORT).show();
                             }
 
                         } else if (rdbThuVien.isChecked()) {
-                            if(!imgThuVien.getTag().equals(R.drawable.ic_baseline_image_24))
-                            {
+                            if (!imgThuVien.getTag().equals(R.drawable.ic_baseline_image_24)) {
                                 Calendar calendar = Calendar.getInstance();
                                 String imageName = "image" + calendar.getTimeInMillis() + ".png";
                                 // Create a reference to "mountains.jpg"
@@ -299,8 +296,7 @@ public class user extends AppCompatActivity {
                                         }
                                     }
                                 });
-                            }else
-                            {
+                            } else {
                                 Toast.makeText(context, "Bạn Chưa Chọn Ảnh", Toast.LENGTH_SHORT).show();
                             }
                         }
@@ -328,14 +324,26 @@ public class user extends AppCompatActivity {
                     return;
                 }
 
-
                 user.setName(txtNameUserEdit.getText().toString());
                 user.setPhone(txtphoneUser_.getText().toString());
                 user.setAddress(txtdiachi.getText().toString());
 
                 FirebaseDatabase.getInstance().getReference("users")
                         .child(MainActivity.UsernameApp).setValue(user);
+                Toast.makeText(getApplicationContext(), "Thành công", Toast.LENGTH_SHORT).show();
+                onBackPressed();
+            }
+        });
 
+
+        Toolbar toolbar = findViewById(R.id.tbChangePassword);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_24);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
             }
         });
 

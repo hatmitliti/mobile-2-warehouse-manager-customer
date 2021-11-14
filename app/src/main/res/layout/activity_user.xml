@@ -6,7 +6,15 @@
     android:layout_height="match_parent"
 
     android:orientation="vertical">
-
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tbChangePassword"
+        android:layout_width="match_parent"
+        app:title="Thông tin người dùng"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#FF5722"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
     <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/profile_image"
         android:layout_width="match_parent"

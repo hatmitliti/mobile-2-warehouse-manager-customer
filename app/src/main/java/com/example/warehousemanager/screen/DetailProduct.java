@@ -26,7 +26,7 @@ import java.text.NumberFormat;
 import java.util.Locale;
 
 public class DetailProduct extends AppCompatActivity {
-    Toolbar toolbar;
+  //  Toolbar toolbar;
     ImageView imgHinh;
 
     @Override
@@ -74,7 +74,6 @@ public class DetailProduct extends AppCompatActivity {
 
                 DatabaseReference mDatabaseCart = FirebaseDatabase.getInstance().getReference("carts");
                 //  mDatabase.child(usernameApp).child(product.getId()).setValue(productInCart);
-
                 mDatabaseCart.child(MainActivity.UsernameApp).addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -102,11 +101,14 @@ public class DetailProduct extends AppCompatActivity {
 
 
     private void setEvent() {
+      //  setSupportActionBar(toolbar);
+     ////   getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+       // getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_24);
+
+        Toolbar toolbar = findViewById(R.id.tbChangePassword);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_24);
-
-
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -118,7 +120,7 @@ public class DetailProduct extends AppCompatActivity {
     }
 
     private void setControl() {
-        toolbar = findViewById(R.id.tb);
+      //  toolbar = findViewById(R.id.tb);
         imgHinh = findViewById(R.id.imgHinh);
     }
 }

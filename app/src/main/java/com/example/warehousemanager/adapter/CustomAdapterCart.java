@@ -81,11 +81,9 @@ public class CustomAdapterCart extends ArrayAdapter {
         viewHolder.btnTang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("carts");
                 mDatabase.child(MainActivity.UsernameApp).child(productInCart.
                         getId()).child("quality").setValue(productInCart.getQuality() + 1);
-
             }
         });
 

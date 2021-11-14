@@ -34,6 +34,7 @@ import java.util.ArrayList;
 public class Login extends AppCompatActivity {
     EditText edtEmail, edtPassword;
     Button btnLogin;
+    Button btnforgetPassword;
     FirebaseAuth auth;
     FirebaseUser currentUser;
 
@@ -45,6 +46,14 @@ public class Login extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         Mapping();
         setEvent();
+
+
+
+        currentUser = auth.getCurrentUser();
+        if (currentUser != null) {
+            MainActivity.UsernameApp = auth.getUid();
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        }
     }
 
     private void setEvent() {
@@ -54,6 +63,14 @@ public class Login extends AppCompatActivity {
                 checkLogin();
             }
         });
+
+        btnforgetPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), FogotPass.class));
+            }
+        });
+
     }
 
     private void checkLogin() {
@@ -116,6 +133,7 @@ public class Login extends AppCompatActivity {
         edtEmail = findViewById(R.id.edtEmail);
         edtPassword = findViewById(R.id.edtPassword);
         btnLogin = findViewById(R.id.btnLogin);
+        btnforgetPassword = findViewById(R.id.btnforgetPassword);
     }
 
 }

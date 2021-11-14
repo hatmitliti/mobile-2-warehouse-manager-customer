@@ -71,6 +71,7 @@
             android:textColor="@color/black"
             android:textSize="20dp" />
     </LinearLayout>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -97,10 +98,28 @@
         android:text="Xem đơn hàng" />
 
     <Button
-
         android:id="@+id/btnThongTinUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="THÔNG TIN NGƯỜI DÙNG" />
+
+    <Button
+        android:id="@+id/btnChangePass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="THAY ĐỔI MẬT KHẨU" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center|bottom">
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ĐĂNG XUẤT" />
+    </LinearLayout>
+
 
 </LinearLayout>
