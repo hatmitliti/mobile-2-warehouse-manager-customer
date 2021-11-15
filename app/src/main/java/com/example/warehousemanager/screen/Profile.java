@@ -2,6 +2,8 @@ package com.example.warehousemanager.screen;
 
 import static android.app.Activity.RESULT_OK;
 
+import static androidx.core.app.ActivityCompat.finishAffinity;
+
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -56,8 +58,8 @@ public class Profile extends Fragment {
     TextView txtHang;
     TextView txtTenUser;
     ImageView imgUser;
-   // ArrayList<String> mKey;
-
+    // ArrayList<String> mKey;
+    int dem = 1;
 
     @Nullable
     @Override
@@ -137,10 +139,17 @@ public class Profile extends Fragment {
                 startActivity(new Intent(getContext(), ChangePassword.class));
             }
         });
+
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                FirebaseAuth.getInstance().signOut();
+                if (dem == 2) {
+                    finishAffinity(getActivity());
+                } else {
+                    Toast.makeText(getContext(), "Click thêm lần nửa", Toast.LENGTH_SHORT).show();
+                    dem = 2;
+                }
             }
         });
         return view;
