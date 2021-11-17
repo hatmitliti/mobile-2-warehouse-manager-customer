@@ -31,7 +31,6 @@ public class ChangePassword extends AppCompatActivity {
         Button btnDoiMK = findViewById(R.id.btnDoiMK);
 
         mapping();
-
         btnDoiMK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
