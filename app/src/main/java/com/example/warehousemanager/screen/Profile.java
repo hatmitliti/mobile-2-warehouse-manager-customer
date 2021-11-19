@@ -145,7 +145,8 @@ public class Profile extends Fragment {
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
                 if (dem == 2) {
-                    finishAffinity(getActivity());
+                    getActivity().onBackPressed();
+                    //finishAffinity(getActivity());
                 } else {
                     Toast.makeText(getContext(), "Click thêm lần nửa", Toast.LENGTH_SHORT).show();
                     dem = 2;
