@@ -15,15 +15,17 @@
             >
             <RadioButton
                 android:id="@+id/rdbChonAnhTuCamera"
-                android:layout_width="wrap_content"
+                android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:text="Chọn Ảnh Từ Camera"
+                android:lines="2"
                 android:layout_marginRight="10dp"/>
             <RadioButton
                 android:id="@+id/rdbChonAnhTuThuVien"
-                android:layout_width="wrap_content"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="Chọn Ảnh Từ Thư Viện"
+                android:lines="2"
                 android:layout_marginLeft="10dp"/>
 
         </RadioGroup>
