@@ -63,9 +63,9 @@ public class CustomAdapterOrder extends ArrayAdapter {
             viewHolder = (ViewHolder) convertView.getTag();
         }
         ProductCart pc = data.get(position);
-        viewHolder.giaTien.setText(en.format(pc.getPrice()) + "VNĐ");
+        viewHolder.giaTien.setText(en.format(pc.getPrice()) + " VNĐ");
         viewHolder.ten.setText(pc.getName() + "");
-        viewHolder.txtSoLuong.setText("* " + pc.getQuality() + "");
+        viewHolder.txtSoLuong.setText("x " + pc.getQuality() + "");
         Picasso.get().load(pc.getImage()).into(viewHolder.imgHinhAnh);
         return convertView;
     }

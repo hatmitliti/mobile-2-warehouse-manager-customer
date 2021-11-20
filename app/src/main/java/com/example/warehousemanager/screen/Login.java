@@ -34,6 +34,7 @@ import java.util.ArrayList;
 public class Login extends AppCompatActivity {
     EditText edtEmail, edtPassword;
     Button btnLogin;
+    Button btnforgetPassword;
     FirebaseAuth auth;
     FirebaseUser currentUser;
 
@@ -45,6 +46,42 @@ public class Login extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         Mapping();
         setEvent();
+
+
+
+        currentUser = auth.getCurrentUser();
+        if (currentUser != null) {
+            DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("user");
+            mDatabase.addChildEventListener(new ChildEventListener() {
+                @Override
+                public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                   if (snapshot.getKey().equals(auth.getUid())){
+                       MainActivity.UsernameApp = auth.getUid();
+                       startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                   }
+                }
+
+                @Override
+                public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+                }
+
+                @Override
+                public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+                }
+
+                @Override
+                public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        }
     }
 
     private void setEvent() {
@@ -54,6 +91,14 @@ public class Login extends AppCompatActivity {
                 checkLogin();
             }
         });
+
+        btnforgetPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), FogotPass.class));
+            }
+        });
+
     }
 
     private void checkLogin() {
@@ -116,6 +161,7 @@ public class Login extends AppCompatActivity {
         edtEmail = findViewById(R.id.edtEmail);
         edtPassword = findViewById(R.id.edtPassword);
         btnLogin = findViewById(R.id.btnLogin);
+        btnforgetPassword = findViewById(R.id.btnforgetPassword);
     }
 
 }
