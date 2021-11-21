@@ -16,8 +16,9 @@
         android:textStyle="bold" />
     <ListView
         android:id="@+id/lv"
+        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="550dp" />
+        android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/txtTongTienCart"
@@ -25,12 +26,14 @@
         android:layout_height="wrap_content"
         android:background="#83FF61"
         android:text="Tổng tiền"
-        android:textAlignment="center"
+        android:layout_gravity="bottom"
+        android:gravity="center"
         android:textColor="@color/black"
         android:textSize="20dp"
         android:textStyle="bold" />
 
     <Button
+        android:layout_gravity="bottom"
         android:id="@+id/btnDatHang"
         android:layout_width="match_parent"
         android:layout_height="50dp"

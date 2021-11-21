@@ -15,92 +15,98 @@
         app:layout_constraintTop_toTopOf="parent"
         app:title="Đặt hàng" />
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="ĐỊA CHỈ"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/txtsdt"
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="5dp"
-            android:background="@drawable/border"
-            android:hint="Số điện thoại"
-            android:minHeight="48dp"
-            android:padding="10dp" />
-
-        <EditText
-            android:id="@+id/txtquan"
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="5dp"
-            android:background="@drawable/border"
-            android:hint="Quận"
-            android:minHeight="48dp"
-            android:padding="10dp" />
-
-        <EditText
-            android:id="@+id/txtphuong"
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="5dp"
-            android:background="@drawable/border"
-            android:hint="Phường"
-            android:minHeight="48dp"
-            android:padding="10dp" />
-
-        <EditText
-            android:id="@+id/sonhatenduong"
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="5dp"
-            android:background="@drawable/border"
-            android:hint="Số nhà tên đường"
-            android:minHeight="48dp"
-            android:padding="10dp" />
-
-        <ListView
-            android:id="@+id/lv"
-            android:layout_width="match_parent"
-            android:layout_height="300dp" />
-
-        <TextView
-            android:layout_marginBottom="10dp"
-            android:id="@+id/txtTongTien"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Tổng tiền"
-            android:textAlignment="center"
-            android:textColor="#FF0000"
-            android:textSize="25dp"
-            android:textStyle="bold" />
-
+        android:layout_height="wrap_content">
         <LinearLayout
-            android:paddingTop="10dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <Button
-                android:textSize="20dp"
-                android:id="@+id/btnDatHangXacNhan"
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Đặt hàng" />
-        </LinearLayout>
+                android:layout_height="wrap_content"
+                android:text="ĐỊA CHỈ"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
-    </LinearLayout>
+            <EditText
+                android:id="@+id/txtsdt"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:background="@drawable/border"
+                android:hint="Số điện thoại"
+                android:minHeight="48dp"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/txtquan"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:background="@drawable/border"
+                android:hint="Quận"
+                android:minHeight="48dp"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/txtphuong"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:background="@drawable/border"
+                android:hint="Phường"
+                android:minHeight="48dp"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/sonhatenduong"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:background="@drawable/border"
+                android:hint="Số nhà tên đường"
+                android:minHeight="48dp"
+                android:padding="10dp" />
+
+            <ListView
+                android:id="@+id/lv"
+                android:layout_width="match_parent"
+                android:layout_height="300dp" />
+
+            <TextView
+                android:layout_marginBottom="10dp"
+                android:id="@+id/txtTongTien"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tổng tiền"
+                android:textAlignment="center"
+                android:textColor="#FF0000"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:paddingTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:textSize="20dp"
+                    android:id="@+id/btnDatHangXacNhan"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Đặt hàng" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
 </LinearLayout>

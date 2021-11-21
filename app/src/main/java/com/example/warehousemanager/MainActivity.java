@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     BottomNavigationView navigationView;
     ViewPager2 viewPager2;
     public static String UsernameApp;
-    public static String NameApp;
+//    public static String NameApp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

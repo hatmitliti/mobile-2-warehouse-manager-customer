@@ -38,6 +38,7 @@ public class ScreenOrder extends AppCompatActivity {
     CustomAdapterOrder adapter;
     Button btnDatHangXacNhan;
     TextView txtTongTien;
+    String name = "";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -81,12 +82,12 @@ public class ScreenOrder extends AppCompatActivity {
                     String ad1 = sonhatenduong.getText().toString();
                     String ad2 = txtphuong.getText().toString();
                     String ad3 = txtquan.getText().toString();
-                    String ad4 = txtsdt.getText().toString();
+                    //  String ad4 = txtsdt.getText().toString();
 
-                    String address = ad1 + " - " + ad2 + " - " + ad3 + " - " + ad4;
+                    String address = ad1 + " - " + ad2 + " - " + ad3;
                     String id = UUID.randomUUID().toString();
                     String id_user = MainActivity.UsernameApp;
-                    String name_user = MainActivity.NameApp;
+                    String name_user = name;
                     String sdt = txtsdt.getText().toString();
 
                     int tong = 0;
@@ -120,8 +121,9 @@ public class ScreenOrder extends AppCompatActivity {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 User user = snapshot.getValue(User.class);
-                if (user.getId().equals(MainActivity.UsernameApp)){
+                if (user.getId().equals(MainActivity.UsernameApp)) {
                     txtsdt.setText(user.getPhone());
+                    name = user.getName();
                 }
             }
 

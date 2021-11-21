@@ -122,7 +122,7 @@ public class Login extends AppCompatActivity {
                                 if (snapshot.getKey().equals(auth.getUid())) {
                                     User user = snapshot.getValue(User.class);
                                     MainActivity.UsernameApp = auth.getUid();
-                                    MainActivity.NameApp = user.getName();
+                                  //  MainActivity.NameApp = user.getName();
                                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
                                 }
                             }
